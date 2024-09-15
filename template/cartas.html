@@ -18,10 +18,22 @@
                     style="font-size: 1.5rem;"></i></a>
         </div>
     </nav>
+
     <main class="p-5">
         <h1 class="text-center"><i class="bi bi-card-heading"></i> Cartas</h1>
-        <div class="row">
-            <div class="col-sm-3 mb-3 mb-sm-0 pt-4 position-relative">
+
+        <!-- Filtros de Cartas -->
+        <div class="d-flex justify-content-center mb-4">
+            <input type="date" id="dataFiltro" class="form-control me-2" style="width: 200px;">
+            <button class="btn btn-outline-primary me-2" onclick="filtrarCartasPorData()">Filtrar por Data</button>
+            <button class="btn btn-outline-primary me-2" onclick="filtrarCartas('novos')">Novos</button>
+            <button class="btn btn-outline-dark" onclick="filtrarCartas('todos')">Ver Todos</button>
+        </div>
+
+        <!-- Cartas -->
+        <div class="row" id="cartas">
+            <div class="col-sm-3 mb-3 mb-sm-0 pt-4 position-relative carta" data-data="2024-09-14T21:08"
+                data-novo="false">
                 <div class="card">
                     <div class="card-body">
                         <h5 class="card-title">Carta</h5>
@@ -35,7 +47,7 @@
                 </div>
             </div>
 
-            <div class="col-sm-3 pt-4 position-relative">
+            <div class="col-sm-3 pt-4 position-relative carta" data-data="2024-09-14T23:00" data-novo="false">
                 <div class="card">
                     <div class="card-body">
                         <h5 class="card-title">Teias de Amor e Doçura</h5>
@@ -49,17 +61,13 @@
                 </div>
             </div>
 
-            <div class="col-sm-3 pt-4 position-relative">
+            <!-- Aqui está um novo -->
+            <div class="col-sm-3 pt-4 position-relative carta" data-data="2024-09-15T02:22" data-novo="false">
                 <div class="card">
-
-                    <span
-                        class="position-absolute top-0 start-100 translate-middle p-2 bg-danger border border-light rounded-circle">
-                    </span>
-
                     <div class="card-body">
                         <h5 class="card-title">A Luz das Estrelas</h5>
-                        <p class="card-text">Às vezes, nos momentos mais escuros, é quando vemos as estrelas mais
-                            brilhantes. No silêncio da noit...</p>
+                        <p class="card-text">Às vezes, nos momentos mais escuros, vemos as estrelas mais brilhantes...
+                        </p>
                         <a href="../page/cartinhas/3.html" class="btn btn-outline-primary">Acessar</a>
                     </div>
                     <div class="card-footer text-body-secondary">
@@ -68,13 +76,8 @@
                 </div>
             </div>
 
-            <div class="col-sm-3 pt-4 position-relative">
+            <div class="col-sm-3 pt-4 position-relative carta" data-data="2024-09-15T02:43" data-novo="false">
                 <div class="card">
-
-                    <span
-                        class="position-absolute top-0 start-100 translate-middle p-2 bg-danger border border-light rounded-circle">
-                    </span>
-
                     <div class="card-body">
                         <h5 class="card-title">Sonhos nas Estrelas</h5>
                         <p class="card-text">No vasto universo, as estrelas nos lembram de como somos pequenos, mas
@@ -87,17 +90,12 @@
                 </div>
             </div>
 
-            <div class="col-sm-3 pt-4 position-relative">
+            <div class="col-sm-3 pt-4 position-relative carta" data-data="2024-09-15T03:12" data-novo="false">
                 <div class="card">
-
-                    <span
-                        class="position-absolute top-0 start-100 translate-middle p-2 bg-danger border border-light rounded-circle">
-                    </span>
-
                     <div class="card-body">
                         <h5 class="card-title">Brilho Infinito</h5>
-                        <p class="card-text">As estrelas que cintilam acima de nós já testemunharam incontáveis eras e
-                            histórias, permanecendo ...</p>
+                        <p class="card-text">As estrelas que cintilam acima de nós já testemunharam incontáveis eras...
+                        </p>
                         <a href="../page/cartinhas/5.html" class="btn btn-outline-primary">Acessar</a>
                     </div>
                     <div class="card-footer text-body-secondary">
@@ -106,13 +104,8 @@
                 </div>
             </div>
 
-            <div class="col-sm-3 pt-4 position-relative">
+            <div class="col-sm-3 pt-4 position-relative carta" data-data="2024-09-15T03:23" data-novo="false">
                 <div class="card">
-
-                    <span
-                        class="position-absolute top-0 start-100 translate-middle p-2 bg-danger border border-light rounded-circle">
-                    </span>
-
                     <div class="card-body">
                         <h5 class="card-title">Pensando em Você Sob as Estrelas</h5>
                         <p class="card-text">Enquanto a noite cai e o mundo se aquieta, eu me pego pensando em...</p>
@@ -124,48 +117,63 @@
                 </div>
             </div>
 
-            <div class="col-sm-3 pt-4 position-relative">
+            <div class="col-sm-3 pt-4 position-relative carta" data-data="2024-09-15T15:08" data-novo="true">
                 <div class="card">
-
                     <span
                         class="position-absolute top-0 start-100 translate-middle p-2 bg-danger border border-light rounded-circle">
                     </span>
 
                     <div class="card-body">
-                        <h5 class="card-title">Entre Sonhos e Pensamentos</h5>
-                        <p class="card-text">Toda vez que a noite chega, meu pensamento vai direto até você. É como se,
-                            ao fechar os olhos, meu ....</p>
-                        <a href="../page/cartinhas/7.html" class="btn btn-outline-primary">Acessar</a>
+                        <h5 class="card-title">Amor em Linhas de Código</h5>
+                        <p class="card-text">Desde o momento em que te conheci, percebi que nossa conexão era mais do
+                            que
+                            meras linhas de código s...</p>
+                        <a href="../page/cartinhas/9.html" class="btn btn-outline-primary">Acessar</a>
                     </div>
                     <div class="card-footer text-body-secondary">
-                        15/Set/2024 - 03:44
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-sm-3 pt-4 position-relative">
-                <div class="card">
-
-                    <span
-                        class="position-absolute top-0 start-100 translate-middle p-2 bg-danger border border-light rounded-circle">
-                    </span>
-
-                    <div class="card-body">
-                        <h5 class="card-title">A Força da Nossa Conexão</h5>
-                        <p class="card-text">Há algo de mágico na forma como nossas vidas se conectaram. É como se
-                            houvesse um fio invisíve...</p>
-                        <a href="../page/cartinhas/8.html" class="btn btn-outline-primary">Acessar</a>
-                    </div>
-                    <div class="card-footer text-body-secondary">
-                        15/Set/2024 - 05:23
+                        15/Set/2024 - 15:08
                     </div>
                 </div>
             </div>
         </div>
     </main>
+
+    <script>
+        // Filtra as cartas baseado no tipo 'novos' ou 'todos'
+        function filtrarCartas(tipo) {
+            var cartas = document.querySelectorAll('.carta');
+            cartas.forEach(function (carta) {
+                if (tipo === 'todos') {
+                    carta.style.display = 'block'; // Mostra todas as cartas
+                } else if (tipo === 'novos') {
+                    if (carta.getAttribute('data-novo') === 'true') {
+                        carta.style.display = 'block'; // Exibe apenas cartas com 'data-novo' igual a 'true'
+                    } else {
+                        carta.style.display = 'none'; // Oculta as cartas que não são novas
+                    }
+                }
+            });
+        }
+
+        // Filtra as cartas por data selecionada no input
+        function filtrarCartasPorData() {
+            var dataFiltro = document.getElementById('dataFiltro').value;
+            var cartas = document.querySelectorAll('.carta');
+
+            cartas.forEach(function (carta) {
+                var dataCarta = carta.getAttribute('data-data').substring(0, 10);
+                if (dataFiltro === '' || dataFiltro === dataCarta) {
+                    carta.style.display = 'block'; // Mostra a carta se a data for igual à selecionada
+                } else {
+                    carta.style.display = 'none'; // Oculta se a data não corresponder
+                }
+            });
+        }
+    </script>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-        crossorigin="anonymous"></script>
+        integrity="sha384-srGr3qfBw0RmCrkQv7InH9SZyf3EOhfvpsTtHQwBdqcEOb5gCHnZY11KF+YnxjSE" crossorigin="anonymous">
+        </script>
 </body>
 
 </html>
