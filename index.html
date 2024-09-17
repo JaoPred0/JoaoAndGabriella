@@ -6,8 +6,8 @@
     <title>Notificação Programada</title>
 </head>
 <body>
-    <h1>Notificação às 11:32</h1>
-    <p>A notificação aparecerá às 11:32, como uma notificação de celular.</p>
+    <h1>Notificação às 11:40</h1>
+    <p>A notificação aparecerá às 11:40, como uma notificação de celular.</p>
 
     <script>
         // Função para verificar o horário e mostrar a notificação
@@ -17,7 +17,7 @@
             const minutes = now.getMinutes();
 
             // Defina o horário em que deseja disparar a notificação (11:32)
-            if (hours === 11 && minutes === 32) {
+            if (hours === 11 && minutes === 40) {
                 showNotification();
             }
         }
@@ -57,7 +57,7 @@
         }
 
         // Verifica o horário a cada minuto
-        setInterval(checkTimeAndNotify, 6000); // A cada minuto
+        setInterval(checkTimeAndNotify, 60000); // A cada minuto
 
         // Verifica as permissões logo que a página é carregada
         if (Notification.permission !== 'granted') {
