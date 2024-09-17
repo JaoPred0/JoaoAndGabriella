@@ -1,15 +1,13 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Notificação Programada</title>
 </head>
-
 <body>
-    <h1>Notificação em desenvolvimento</h1>
-    <p>A notificação aparecerá às 11:20, como uma notificação de celular.</p>
+    <h1>Notificação às 11:25</h1>
+    <p>A notificação aparecerá às 11:25, como uma notificação de celular.</p>
 
     <script>
         // Função para verificar o horário e mostrar a notificação
@@ -19,10 +17,8 @@
             const minutes = now.getMinutes();
 
             // Defina o horário em que deseja disparar a notificação (11:10)
-            if (hours === 11 && minutes === 20) {
+            if (hours === 11 && minutes === 25) {
                 showNotification();
-            } else {
-                console.log("Ainda não é 11:20, são " + hours + ":" + minutes);
             }
         }
 
@@ -33,44 +29,40 @@
                 // Pede permissão ao usuário, caso ainda não tenha sido concedida
                 if (Notification.permission === 'granted') {
                     // Exibe a notificação
-                    new Notification("Você tem uma nova mensagem!", {
+                    const notification = new Notification("Você tem uma nova mensagem!", {
                         body: "Esta é uma notificação programada.",
                         icon: 'https://via.placeholder.com/100' // Ícone da notificação
                     });
+
+                    // Adiciona um evento para quando a notificação é clicada
+                    notification.onclick = function() {
+                        window.open('https://jaopred0.github.io/JoaoAndGabriella/', '_blank');
+                    };
+
                 } else if (Notification.permission !== 'denied') {
                     Notification.requestPermission().then(permission => {
                         if (permission === 'granted') {
-                            new Notification("Você tem uma nova mensagem!", {
+                            const notification = new Notification("Você tem uma nova mensagem!", {
                                 body: "Esta é uma notificação programada.",
                                 icon: 'https://via.placeholder.com/100'
                             });
-                        } else {
-                            console.log("Permissão de notificação foi negada.");
+
+                            notification.onclick = function() {
+                                window.open('https://jaopred0.github.io/JoaoAndGabriella/', '_blank');
+                            };
                         }
                     });
                 }
-            } else {
-                console.log("Este navegador não suporta notificações.");
             }
         }
 
         // Verifica o horário a cada minuto
-        setInterval(checkTimeAndNotify, 6000); // A cada minuto
+        setInterval(checkTimeAndNotify, 600); // A cada minuto
 
         // Verifica as permissões logo que a página é carregada
         if (Notification.permission !== 'granted') {
-            Notification.requestPermission().then(permission => {
-                if (permission === 'granted') {
-                    console.log("Permissão concedida.");    
-                } else {
-                    console.log("Permissão negada.");
-                }
-            });
-        } else {
-            console.log("Permissão já concedida.");
+            Notification.requestPermission();
         }
-
     </script>
 </body>
-
 </html>
