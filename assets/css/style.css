@@ -1,3 +1,6 @@
+* {
+    transition: all 0.2s ease-in-out;
+}
 body {
     background-color: #121212; /* Fundo escuro para o tema */
     color: white;
@@ -65,4 +68,27 @@ h1 {
     .colorido {
         font-size: 3vh; /* Aumenta ainda mais em telas muito pequenas */
     }
+}
+
+
+.card {
+    background-color: #1e1e1e; /* Fundo do card em um tom escuro */
+    border: none; /* Remove bordas */
+    cursor: pointer;
+    &:hover {
+        transform: scale(1.05);
+        border: solid #fff 1px;
+    }
+}
+
+.card-title {
+    color: #ffffff; /* Cor do título do card */
+}
+
+.card-text {
+    color: #d3d3d3; /* Cor do texto do card */
+}
+
+.card-footer {
+    background-color: #2a2a2a; /* Fundo do rodapé do card */
 }
