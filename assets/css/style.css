@@ -1,13 +1,17 @@
 * {
     transition: all 0.2s ease-in-out;
 }
+
 body {
-    background-color: #121212; /* Fundo escuro para o tema */
+    background-color: #121212;
+    /* Fundo escuro para o tema */
     color: white;
 }
+
 h1 {
     width: 100% !important;
 }
+
 .offcanvas-body {
     background-color: #333;
     color: white;
@@ -19,11 +23,13 @@ h1 {
 
 .nav-link {
     font-size: 20px;
-    color: #fff; /* Cor do texto */
+    color: #fff;
+    /* Cor do texto */
 }
 
 .nav-link:hover {
-    color: #ddd; /* Cor do texto ao passar o mouse */
+    color: #ddd;
+    /* Cor do texto ao passar o mouse */
 }
 
 .icon-button {
@@ -41,54 +47,120 @@ h1 {
 }
 
 .desaparecer {
-    display: none; /* O conteúdo estará oculto até que seja exibido */
+    display: none;
+    /* O conteúdo estará oculto até que seja exibido */
 }
 
 .colorido {
     font-size: 3em;
-    animation: cor-animada 3s linear infinite; /* Animação que muda de cor */
+    animation: cor-animada 3s linear infinite;
+    /* Animação que muda de cor */
 }
 
 @keyframes cor-animada {
-    0% { color: #ff0080; }
-    25% { color: #ff8c00; }
-    50% { color: #f9f900; }
-    75% { color: #00ff77; }
-    100% { color: #ff0080; }
+    0% {
+        color: #ff0080;
+    }
+
+    25% {
+        color: #ff8c00;
+    }
+
+    50% {
+        color: #f9f900;
+    }
+
+    75% {
+        color: #00ff77;
+    }
+
+    100% {
+        color: #ff0080;
+    }
 }
 
 @media (max-width: 768px) {
     .colorido {
-        font-size: 5vh; /* Aumenta ainda mais em telas muito pequenas */
+        font-size: 5vh;
+        /* Aumenta ainda mais em telas muito pequenas */
 
     }
 }
 
 @media (max-width: 480px) {
     .colorido {
-        font-size: 3vh; /* Aumenta ainda mais em telas muito pequenas */
+        font-size: 3vh;
+        /* Aumenta ainda mais em telas muito pequenas */
     }
 }
 
 
 .card {
-    background-color: #1e1e1e; /* Fundo do card em um tom escuro */
-    border: none; /* Remove bordas */
+    background-color: #1e1e1e;
+    /* Fundo do card em um tom escuro */
+    border: none;
+    /* Remove bordas */
     cursor: pointer;
+
     &:hover {
-        transform: scale(1.05);
+        transform: scale(1.02);
         border: solid #fff 1px;
     }
 }
 
 .card-title {
-    color: #ffffff; /* Cor do título do card */
+    color: #ffffff;
+    /* Cor do título do card */
 }
 
 .card-text {
-    color: #d3d3d3; /* Cor do texto do card */
+    color: #d3d3d3;
+    /* Cor do texto do card */
 }
 
 .card-footer {
-    background-color: #2a2a2a; /* Fundo do rodapé do card */
+    background-color: #2a2a2a;
+    /* Fundo do rodapé do card */
+}
+
+.progress {
+    background-color: #2a2a2a;
+    height: 40px;
+    /* Aumenta a altura da barra de progresso */
+}
+
+.progress-bar {
+    background-color: #4CAF50;
+    font-size: 2rem;
+    /* Aumenta o tamanho da fonte do progresso */
+    display: flex;
+    align-items: center;
+    /* Centraliza verticalmente */
+    justify-content: center;
+    /* Centraliza horizontalmente */
+    color: black;
+    /* Define a cor do texto */
+    font-weight: 700;
+    /* Aumenta a espessura da fonte */
+}
+
+.progress-text {
+    position: absolute;
+    /* Para sobrepor a barra de progresso */
+    width: 100%;
+    text-align: center;
+    /* Centraliza horizontalmente */
+    font-size: 1.5rem;
+    /* Tamanho do texto */
+    font-weight: bold;
+    /* Aumenta a espessura da fonte */
+    color: #fff;
+    /* Define a cor do texto */
+}
+
+.progress-container {
+    position: relative;
+    /* Para permitir que o texto sobreponha a barra */
+    margin-bottom: 20px;
+    /* Espaço abaixo da barra de progresso */
 }
