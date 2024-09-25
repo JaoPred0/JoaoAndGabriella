@@ -1,0 +1,68 @@
+body {
+    background-color: #121212; /* Fundo escuro para o tema */
+    color: white;
+}
+h1 {
+    width: 100% !important;
+}
+.offcanvas-body {
+    background-color: #333;
+    color: white;
+}
+
+.offcanvas-header {
+    background-color: #444;
+}
+
+.nav-link {
+    font-size: 20px;
+    color: #fff; /* Cor do texto */
+}
+
+.nav-link:hover {
+    color: #ddd; /* Cor do texto ao passar o mouse */
+}
+
+.icon-button {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+}
+
+.icon-button i {
+    margin-right: 10px;
+}
+
+.aparecer {
+    display: block;
+}
+
+.desaparecer {
+    display: none; /* O conteúdo estará oculto até que seja exibido */
+}
+
+.colorido {
+    font-size: 3em;
+    animation: cor-animada 3s linear infinite; /* Animação que muda de cor */
+}
+
+@keyframes cor-animada {
+    0% { color: #ff0080; }
+    25% { color: #ff8c00; }
+    50% { color: #f9f900; }
+    75% { color: #00ff77; }
+    100% { color: #ff0080; }
+}
+
+@media (max-width: 768px) {
+    .colorido {
+        font-size: 5vh; /* Aumenta ainda mais em telas muito pequenas */
+
+    }
+}
+
+@media (max-width: 480px) {
+    .colorido {
+        font-size: 3vh; /* Aumenta ainda mais em telas muito pequenas */
+    }
+}
